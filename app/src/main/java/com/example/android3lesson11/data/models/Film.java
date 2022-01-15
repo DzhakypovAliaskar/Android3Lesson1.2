@@ -28,6 +28,9 @@ public class Film {
     @SerializedName("release_date")
     private int releaseDate;
 
+    @SerializedName("director")
+    private String director;
+
     public String getId() {
         return id;
     }
@@ -90,5 +93,13 @@ public class Film {
 
     public void setReleaseDate(int releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
     }
 }
