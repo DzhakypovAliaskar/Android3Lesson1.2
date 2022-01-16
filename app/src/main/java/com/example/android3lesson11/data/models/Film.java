@@ -3,7 +3,6 @@ package com.example.android3lesson11.data.models;
 import com.google.gson.annotations.SerializedName;
 
 public class Film {
-
     @SerializedName("id")
     private String id;
 
@@ -13,23 +12,11 @@ public class Film {
     @SerializedName("image")
     private String image;
 
-    @SerializedName("description")
-    private String description;
-
-    @SerializedName("original_title")
-    private String originalTitle;
-
-    @SerializedName("running_time")
-    private int runningTime;
-
     @SerializedName("producer")
     private String producer;
 
-    @SerializedName("release_date")
-    private int releaseDate;
-
-    @SerializedName("director")
-    private String director;
+    @SerializedName("description")
+    private String description;
 
     public String getId() {
         return id;
@@ -55,20 +42,20 @@ public class Film {
         this.image = image;
     }
 
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getOriginalTitle() {
-        return originalTitle;
-    }
-
-    public void setOriginalTitle(String originalTitle) {
-        this.originalTitle = originalTitle;
     }
 
     public int getRunningTime() {
@@ -79,22 +66,6 @@ public class Film {
         this.runningTime = runningTime;
     }
 
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
-    public int getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(int releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
     public String getDirector() {
         return director;
     }
@@ -102,4 +73,18 @@ public class Film {
     public void setDirector(String director) {
         this.director = director;
     }
+
+    @SerializedName("running_time")
+    private int runningTime;
+
+    @SerializedName("director")
+    private String director;
+
+
 }
+
+
+
+
+
+
