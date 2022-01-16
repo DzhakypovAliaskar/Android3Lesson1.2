@@ -8,7 +8,7 @@
 
     <View
         android:layout_width="5dp"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="20dp"
         android:background="@color/purple_200"
@@ -17,8 +17,8 @@
 
     <ImageView
         android:id="@+id/image_iv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:background="@color/purple_200"
