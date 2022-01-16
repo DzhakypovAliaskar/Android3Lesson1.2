@@ -2,6 +2,7 @@ package com.example.android3lesson11.ui.detail_films;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -10,12 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
+
 import com.example.android3lesson11.App;
 import com.example.android3lesson11.data.models.Film;
 import com.example.android3lesson11.data.remote.OnDetailFilmsCallback;
 import com.example.android3lesson11.databinding.FragmentDetailFilmsBinding;
 
 public class DetailFilmsFragment extends Fragment {
+
+
+
 
     private FragmentDetailFilmsBinding binding;
     private String id;
@@ -46,12 +51,9 @@ public class DetailFilmsFragment extends Fragment {
             @SuppressLint("SetTextI18n")
             @Override
             public void success(Film film) {
-                binding.dateOfReleaseFilm.setText(Integer.toString(film.getReleaseDate()));
                 binding.descriptionFilm.setText(film.getDescription());
-                binding.timeFilm.setText(Integer.toString(film.getRunningTime()));
                 binding.nameFilm.setText(film.getTitle());
-                binding.originalNameFilm.setText(film.getOriginalTitle());
-                binding.producerFilm.setText(film.getProducer());
+                binding.timeFilm.setText(Integer.toString(film.getRunningTime()));
                 binding.directorFilm.setText(film.getDirector());
                 Glide.with(binding.getRoot()).load(film.getImage()).centerCrop().into(binding.imageIv);
             }
