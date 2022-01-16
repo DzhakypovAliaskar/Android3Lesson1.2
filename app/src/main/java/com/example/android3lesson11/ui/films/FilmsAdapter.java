@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.android3lesson11.data.models.Film;
 import com.example.android3lesson11.databinding.ItemFilmsBinding;
 import com.example.android3lesson11.ui.detail_films.ItemClick;
@@ -58,6 +60,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         public void onBind(Film film) {
             binding.title.setText(film.getTitle());
             binding.description.setText(film.getDescription());
+            Glide.with(binding.getRoot()).load(film.getImage()).centerCrop().into(binding.imageFilms);
             itemView.setOnClickListener(view ->
                     itemClick.itemClick(film.getId()));
         }
