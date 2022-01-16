@@ -6,14 +6,13 @@ import com.example.android3lesson11.data.remote.FilmsApiService;
 import com.example.android3lesson11.data.remote.RetrofitClient;
 
 public class App extends Application {
-    private RetrofitClient client;
     public static FilmApi api;
     public static FilmsApiService apiService;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        client = new RetrofitClient();
+        RetrofitClient client = new RetrofitClient();
         api = client.provideFilmApi();
         apiService = new FilmsApiService();
     }

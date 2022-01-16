@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface OnReadyCallback {
     void success(List<Film> films);
+
     void onServerError();
+
     void failure(String msg);
 }

@@ -2,19 +2,16 @@ package com.example.android3lesson11.ui.films;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.android3lesson11.data.models.Film;
 import com.example.android3lesson11.databinding.ItemFilmsBinding;
 import com.example.android3lesson11.ui.detail_films.ItemClick;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHolder>{
+public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHolder> {
 
     private List<Film> films = new ArrayList<>();
     public static ItemClick itemClick;
@@ -24,7 +21,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void setFilms(List<Film> films){
+    public void setFilms(List<Film> films) {
         this.films = films;
         notifyDataSetChanged();
     }
@@ -42,7 +39,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
 
     @Override
     public void onBindViewHolder(@NonNull FilmsViewHolder holder, int position) {
-    holder.onBind(films.get(position));
+        holder.onBind(films.get(position));
     }
 
     @Override
@@ -50,8 +47,8 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
         return films.size();
     }
 
-    public class FilmsViewHolder extends RecyclerView.ViewHolder{
-        private ItemFilmsBinding binding;
+    public static class FilmsViewHolder extends RecyclerView.ViewHolder {
+        private final ItemFilmsBinding binding;
 
         public FilmsViewHolder(@NonNull ItemFilmsBinding binding) {
             super(binding.getRoot());
@@ -62,7 +59,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
             binding.title.setText(film.getTitle());
             binding.description.setText(film.getDescription());
             itemView.setOnClickListener(view ->
-                itemClick.itemClick(film.getId()));
+                    itemClick.itemClick(film.getId()));
         }
     }
 }

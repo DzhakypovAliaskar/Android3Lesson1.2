@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +15,7 @@ import com.example.android3lesson11.data.models.Film;
 import com.example.android3lesson11.data.remote.OnReadyCallback;
 import com.example.android3lesson11.databinding.FragmentFilmsBinding;
 import com.example.android3lesson11.ui.detail_films.ItemClick;
-
 import java.util.List;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class FilmsFragment extends Fragment {
 
@@ -88,14 +83,11 @@ public class FilmsFragment extends Fragment {
     }
 
     private void sendInformation() {
-        adapter.setItemClick(new ItemClick() {
-            @Override
-            public void itemClick(String position) {
-                Bundle bundle = new Bundle();
-                Log.e("TAG", position);
-                bundle.putString("id", position);
-                Navigation.findNavController(requireView()).navigate(R.id.detailFilmsFragment,bundle);
-            }
+        adapter.setItemClick(position -> {
+            Bundle bundle = new Bundle();
+            Log.e("TAG", position);
+            bundle.putString("id", position);
+            Navigation.findNavController(requireView()).navigate(R.id.detailFilmsFragment, bundle);
         });
     }
 }
